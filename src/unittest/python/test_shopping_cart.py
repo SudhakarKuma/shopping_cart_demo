@@ -22,3 +22,8 @@ class TestShoppingCart(unittest.TestCase):
         cart.add_item(500)
         cart.add_item(600)
         self.assertEqual(cart.total(), 990)
+
+    def test_small_orders_have_shipping_cost(self):
+        cart = ShoppingCart()
+        cart.add_item(200)
+        self.assertEqual(cart.total(), 300)

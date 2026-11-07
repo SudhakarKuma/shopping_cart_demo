@@ -7,6 +7,9 @@ class ShoppingCart:
         self.subtotal += price
 
     def total(self):
+        total = self.subtotal
+        if self.subtotal < 500:
+            total += 100 
         if self.subtotal > 1000:
-            return self.subtotal*0.9
-        return self.subtotal 
+            total *= 0.9
+        return total 
